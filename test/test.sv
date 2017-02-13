@@ -20,7 +20,7 @@
  */
 
 
-
+// small testcase to illustrate the indirect register approach
 module test444;
 	import  uvm_pkg::*;
 	import cdns_generic_indirect_register::*;
