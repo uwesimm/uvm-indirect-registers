@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>flexible indirect registers
+API Specification</title>
+
+	<meta name="author" content="uwes">
+	<meta name="description" content="flexible indirect registers API Specification">
+	<meta name="generator" content="Specador. Copyright (C) 2005-2016 AMIQ EDA ">
+	<meta name="keywords" content="SystemVerilog, HTML Documentation, Specador, AMIQ EDA, flexible indirect registers API Specification">
+
+	<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="css/content.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container-fluid">
+
+<!-- ========= Title ======= -->
+	<h2 class="page-element-name">package cdns_generic_indirect_register</h2>
+
+<!-- ========= Top Buttons ======= -->
+		<br>
+		<div class="btn-group">
+				
+	
+	
+	<button data-scroll=#classes type="button" class="btn btn-default">Classes <span class="badge">6</span></button>
+
+	
+	
+	
+	
+
+	<button data-scroll=#package_inheritance_diagram type="button" class="btn btn-default">Class Inheritance Diagram</button>
+
+		</div>
+		<br><br>
+
+<!-- ========= Description ======= -->
+
+	<pre class="comment">#----------------------------------------------------------------------
+#   Copyright 2007-2017 Cadence Design Systems, Inc.
+#   All Rights Reserved Worldwide
+#
+#   Licensed under the Apache License, Version 2.0 (the
+#   "License"); you may not use this file except in
+#   compliance with the License.  You may obtain a copy of
+#   the License at
+#
+#       <code><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></code>
+#
+#   Unless required by applicable law or agreed to in
+#   writing, software distributed under the License is
+#   distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+#   CONDITIONS OF ANY KIND, either express or implied.  See
+#   the License for the specific language governing
+#   permissions and limitations under the License.
+#----------------------------------------------------------------------<br><br><b>Version:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;1.1<br><br><b>Author:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;uwes@cadence.com<br></pre>
+
+  
+  
+  
+ 	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#classes">
+			<h4 class="panel-title">
+					Classes <span class="glyphicon glyphicon-chevron-down"></span>
+			</h4>
+		</div>
+					<ul id="classes" class="list-group panel-collapse collapse in">
+					<li class="list-group-item">
+ 		<a href="cdns_generic_indirect_register-GenericIndirectRegister.html">GenericIndirectRegister</a>
+
+    #(
+      
+  type INDEX
+      = int
+      , 
+  type STORAGE
+      = uvm_reg
+    )
+					</li>
+					<li class="list-group-item">
+ 		<a href="cdns_generic_indirect_register-IndexProviderI.html">IndexProviderI</a>
+
+    #(
+      
+  type INDEX
+      = int
+    )
+					</li>
+					<li class="list-group-item">
+ 		<a href="cdns_generic_indirect_register-IndexableStorageI.html">IndexableStorageI</a>
+
+    #(
+      
+  type INDEX
+      = int
+      , 
+  type STORAGE
+      = int
+    )
+					</li>
+					<li class="list-group-item">
+ 		<a href="cdns_generic_indirect_register-IregFrontdoor.html">IregFrontdoor</a>
+
+    #(
+      
+  type INDEX
+      = int
+      , 
+  type STORAGE
+      = uvm_reg
+    )
+					</li>
+					<li class="list-group-item">
+ 		<a href="cdns_generic_indirect_register-MyIndexableStorageI.html">MyIndexableStorageI</a>
+
+					</li>
+					<li class="list-group-item">
+ 		<a href="cdns_generic_indirect_register-URFindexProvider.html">URFindexProvider</a>
+
+					</li>
+			</ul>
+
+	</div>
+ 
+
+
+
+
+
+	  
+	  
+	  
+	  
+
+<!-- ========= Package Inheritance Diagram ======= -->
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#package_inheritance_diagram">
+			<h4 class="panel-title">
+					Class Inheritance Diagram <span class="glyphicon glyphicon-chevron-right"></span>
+			</h4>
+		</div>
+				<ul id="package_inheritance_diagram" class="list-group panel-collapse collapse">
+			<img src="cdns_generic_indirect_register_inheritance.png" border="0" usemap="#_package_inheritance_diagram" />
+			<map name="_package_inheritance_diagram">
+<area shape="rect" id="node1" href="cdns_generic_indirect_register-GenericIndirectRegister.html"  alt="" coords="633,59,1058,90">
+<area shape="rect" id="node7"  alt="" coords="423,59,513,90">
+<area shape="poly" id="edge1"  alt="" coords="633,77,527,77,527,72,633,72">
+<area shape="rect" id="node2" href="cdns_generic_indirect_register-IndexProviderI.html"  alt="" coords="2277,59,2529,90">
+<area shape="rect" id="node3" href="cdns_generic_indirect_register-IndexableStorageI.html"  alt="" coords="2219,5,2587,35">
+<area shape="rect" id="node4" href="cdns_generic_indirect_register-IregFrontdoor.html"  alt="" coords="2859,114,3189,145">
+<area shape="rect" id="node10"  alt="" coords="2310,114,2495,145">
+<area shape="poly" id="edge6"  alt="" coords="2859,132,2510,132,2510,127,2859,127">
+<area shape="rect" id="node5" href="cdns_generic_indirect_register-MyIndexableStorageI.html"  alt="" coords="2922,5,3126,35">
+<area shape="poly" id="edge5"  alt="" coords="2922,23,2601,23,2601,17,2922,17">
+<area shape="rect" id="node6" href="cdns_generic_indirect_register-URFindexProvider.html"  alt="" coords="2936,59,3112,90">
+<area shape="poly" id="edge4"  alt="" coords="2936,77,2542,77,2542,72,2936,72">
+<area shape="rect" id="node8"  alt="" coords="185,86,303,117">
+<area shape="poly" id="edge2"  alt="" coords="423,83,318,95,317,90,423,77">
+<area shape="rect" id="node9"  alt="" coords="5,86,104,117">
+<area shape="poly" id="edge3"  alt="" coords="185,104,118,104,118,99,185,99">
+<area shape="rect" id="node11"  alt="" coords="1750,114,2013,145">
+<area shape="poly" id="edge7"  alt="" coords="2310,132,2026,132,2026,127,2310,127">
+<area shape="rect" id="node12"  alt="" coords="1406,114,1669,145">
+<area shape="poly" id="edge8"  alt="" coords="1750,132,1683,132,1683,127,1750,127">
+<area shape="rect" id="node13"  alt="" coords="1139,114,1325,145">
+<area shape="poly" id="edge9"  alt="" coords="1406,132,1338,132,1338,127,1406,127">
+<area shape="rect" id="node14"  alt="" coords="753,114,938,145">
+<area shape="poly" id="edge10"  alt="" coords="1139,132,952,132,952,127,1139,127">
+<area shape="rect" id="node15"  alt="" coords="385,114,551,145">
+<area shape="poly" id="edge11"  alt="" coords="752,132,565,132,565,127,752,127">
+<area shape="poly" id="edge12"  alt="" coords="384,122,317,113,318,108,385,116"></map>
+			<br><a href="vlog-legend-classes.html"><span class="label label-primary">Legend</span></a><br>
+		</ul>
+
+	</div>
+
+	</div>
+
+	<div class="footer">
+		<hr><p class="text-center">Generated by <b>uwes</b> on Mon Feb 13 14:31:18 IST 2017 using <a href="http://www.dvteclipse.com/" target="_new">Specador<sup>TM</sup></a> Version 16.1.29</p>
+    </div>
+
+	<script src="lib/jquery/js/jquery.js"></script>
+	<script src="lib/jquery/js/jquery.scrollUp.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<script src="lib/svg-pan-zoom/js/svg-pan-zoom.js"></script>
+	<script src="js/content.js"></script>
+	<script src="js/custom.js"></script>
+
+	</body>
+</html>

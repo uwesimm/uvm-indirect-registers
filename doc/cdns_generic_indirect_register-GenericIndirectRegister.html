@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>flexible indirect registers
+API Specification</title>
+
+	<meta name="author" content="uwes">
+	<meta name="description" content="flexible indirect registers API Specification">
+	<meta name="generator" content="Specador. Copyright (C) 2005-2016 AMIQ EDA ">
+	<meta name="keywords" content="SystemVerilog, HTML Documentation, Specador, AMIQ EDA, flexible indirect registers API Specification">
+
+	<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="css/content.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container-fluid">
+<!-- ========= Title ======= -->
+<h2>class      		<a href="summary-cdns_generic_indirect_register.html">cdns_generic_indirect_register</a>
+:: GenericIndirectRegister
+</h2>
+
+
+<!-- ========= Top Buttons ======= -->
+		<br>
+		<div class="btn-group">
+				<button data-scroll=#parameters type="button" class="btn btn-default">Parameters <span class="badge">2</span></button>
+	<button data-scroll=#constructor type="button" class="btn btn-default">Constructor <span class="badge">1</span></button>
+	
+	
+	
+	
+	
+	<button data-scroll=#functions type="button" class="btn btn-default">Functions <span class="badge">3</span></button>
+	
+
+	<button data-scroll=#inheritance_diagram type="button" class="btn btn-default">Inheritance Diagram</button>
+	<button data-scroll=#collaboration_diagram type="button" class="btn btn-default">Collaboration Diagram</button>
+	<button data-scroll=#direct_associations_diagram type="button" class="btn btn-default">Direct Associations Diagram</button>
+
+		</div>
+		<br><br>
+
+<!-- ========= Inheritance Tree ======= -->
+
+<!-- ========= Description ======= -->
+	<pre class="comment">The generic register groups storage+index into a uvm_reg comptible register<br><br><b>Arguments:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>STORAGE</b> - the storage element type (default=uvm_reg). for this implementation the
+type STORAGE needs to implement the do_predict (API)<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>INDEX</b> - the index type (default=int unsigned)<br></pre>
+
+<!-- ========= Parameters ======= -->
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#parameters">
+			<h4 class="panel-title">
+					Parameters <span class="glyphicon glyphicon-chevron-down"></span>
+			</h4>
+		</div>
+					<ul id="parameters" class="list-group panel-collapse collapse in">
+					<li class="list-group-item">
+						<a name="parameter_INDEX"></a>
+						<span class="signature">
+
+  type INDEX
+      = int
+
+
+						</span>
+
+					</li>
+					<li class="list-group-item">
+						<a name="parameter_STORAGE"></a>
+						<span class="signature">
+
+  type STORAGE
+      = uvm_reg
+
+
+						</span>
+
+					</li>
+			</ul>
+
+	</div>
+
+<!-- ========= Constructor ======= -->
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#constructor">
+			<h4 class="panel-title">
+					Constructor <span class="glyphicon glyphicon-chevron-down"></span>
+			</h4>
+		</div>
+					<ul id="constructor" class="list-group panel-collapse collapse in">
+					<li class="list-group-item">
+						<a name="constructor_new"></a>
+						<span class="signature">
+
+	 function 	
+
+	<b>		new
+</b>(	string
+name = "",
+	int unsigned
+n_bits,
+	int
+has_coverage)
+
+
+						</span>
+	<pre class="comment">Ctor matching the uvm_reg ctor</pre>
+
+					</li>
+			</ul>
+
+	</div>
+
+<!-- ========= Typedefs ======= -->
+
+<!-- ========= Structs ======= -->
+
+<!-- ========= Enums ======= -->
+
+<!-- ========= Variables ======= -->
+
+<!-- ========= Constraints ======= -->
+
+<!-- ========= Functions ======= -->
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#functions">
+			<h4 class="panel-title">
+					Functions <span class="glyphicon glyphicon-chevron-down"></span>
+			</h4>
+		</div>
+					<ul id="functions" class="list-group panel-collapse collapse in">
+					<li class="list-group-item">
+						<a name="function_do_predict"></a>
+						<span class="signature">
+
+	virtual  function 	void
+
+	<b>		do_predict
+</b>(	uvm_reg_item
+rw,
+	uvm_predict_e
+kind = UVM_PREDICT_DIRECT,
+	uvm_reg_byte_en_t
+be = -1)
+
+
+						</span>
+	<pre class="comment">The actual indirect implementation. this particular implementation uses
+the provided index provider to determine the actual index and
+forwards the 'prediction' to the selected storage elements
+this implementation assumes that the storage elements implement do_predict
+this is compatible with uvm_reg and uvm_reg_field</pre>
+
+					</li>
+					<li class="list-group-item">
+						<a name="function_setIndexProvider"></a>
+						<span class="signature">
+
+	virtual  function 	<a href="cdns_generic_indirect_register-GenericIndirectRegister.html">GenericIndirectRegister#(STORAGE, INDEX)</a>
+
+	<b>		setIndexProvider
+</b>(	<a href="cdns_generic_indirect_register-IndexProviderI.html">IndexProviderI#(INDEX)</a>
+index)
+
+
+						</span>
+	<pre class="comment">Sets the index provider for the current instance<br><br><b>Returns:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;the current instance<br><br><b>Arguments:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>index</b> - the current index provider<br></pre>
+
+					</li>
+					<li class="list-group-item">
+						<a name="function_setStorage"></a>
+						<span class="signature">
+
+	virtual  function 	<a href="cdns_generic_indirect_register-GenericIndirectRegister.html">GenericIndirectRegister#(STORAGE, INDEX)</a>
+
+	<b>		setStorage
+</b>(	<a href="cdns_generic_indirect_register-IndexableStorageI.html">IndexableStorageI#(STORAGE, INDEX)</a>
+storage)
+
+
+						</span>
+	<pre class="comment">Sets the storage for this register instance<br><br><b>Returns:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;the current instance<br><br><b>Arguments:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>storage</b> - the current storage<br></pre>
+
+					</li>
+			</ul>
+
+	</div>
+
+<!-- ========= Tasks ======= -->
+
+<!-- ========= Diagrams ======= -->
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#inheritance_diagram">
+			<h4 class="panel-title">
+					Inheritance Diagram <span class="glyphicon glyphicon-chevron-right"></span>
+			</h4>
+		</div>
+				<ul id="inheritance_diagram" class="list-group panel-collapse collapse">
+			<img src="cdns_generic_indirect_register-GenericIndirectRegister_inheritance.png" border="0" usemap="#_inheritance_diagram" />
+			<map name="_inheritance_diagram">
+<area shape="rect" id="node1" href="cdns_generic_indirect_register-GenericIndirectRegister.html"  alt="" coords="555,5,981,35">
+<area shape="rect" id="node2"  alt="" coords="385,5,474,35">
+<area shape="poly" id="edge1"  alt="" coords="555,23,488,23,488,17,555,17">
+<area shape="rect" id="node3"  alt="" coords="185,5,303,35">
+<area shape="poly" id="edge2"  alt="" coords="384,23,317,23,317,17,384,17">
+<area shape="rect" id="node4"  alt="" coords="5,5,104,35">
+<area shape="poly" id="edge3"  alt="" coords="185,23,118,23,118,17,185,17"></map>
+			<br><a href="vlog-legend-classes.html"><span class="label label-primary">Legend</span></a><br>
+		</ul>
+
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#collaboration_diagram">
+			<h4 class="panel-title">
+					Collaboration Diagram <span class="glyphicon glyphicon-chevron-right"></span>
+			</h4>
+		</div>
+				<ul id="collaboration_diagram" class="list-group panel-collapse collapse">
+			<img src="cdns_generic_indirect_register-GenericIndirectRegister_collaboration.png" border="0" usemap="#_collaboration_diagram" />
+			<map name="_collaboration_diagram">
+<area shape="rect" id="node1" href="cdns_generic_indirect_register-GenericIndirectRegister.html"  alt="" coords="102,473,527,503">
+<area shape="rect" id="node2"  alt="" coords="270,379,359,410">
+<area shape="poly" id="edge1"  alt="" coords="312,473,312,423,317,423,317,473">
+<area shape="rect" id="node3"  alt="" coords="255,286,374,317">
+<area shape="poly" id="edge2"  alt="" coords="312,380,312,330,317,330,317,380">
+<area shape="rect" id="node4"  alt="" coords="5,193,104,223">
+<area shape="poly" id="edge3"  alt="" coords="255,302,179,292,138,281,100,264,83,251,69,236,73,232,87,247,103,259,140,276,180,287,255,297">
+<area shape="rect" id="node5"  alt="" coords="321,193,535,223">
+<area shape="poly" id="edge5"  alt="" coords="254,296,226,289,202,279,190,265,190,256,195,246,209,239,235,232,306,220,307,226,236,237,211,244,199,250,195,257,195,263,205,275,228,284,256,290">
+<area shape="poly" id="edge6"  alt="" coords="428,224,420,244,407,263,378,283,375,279,403,259,416,241,423,222">
+<area shape="rect" id="node6"  alt="" coords="294,6,461,37">
+<area shape="poly" id="edge7"  alt="" coords="425,193,419,135,411,98,400,62,393,49,398,46,405,60,417,97,424,134,430,193">
+<area shape="rect" id="node7"  alt="" coords="235,99,373,130">
+<area shape="poly" id="edge8"  alt="" coords="348,196,327,185,310,170,303,157,300,144,305,143,308,155,314,166,330,181,350,191">
+<area shape="rect" id="node8"  alt="" coords="514,99,633,130">
+<area shape="poly" id="edge11"  alt="" coords="443,191,497,152,531,133,534,138,500,157,446,195">
+<area shape="rect" id="node9"  alt="" coords="657,99,794,130">
+<area shape="poly" id="edge13"  alt="" coords="482,191,574,165,674,131,676,136,575,171,483,196">
+<area shape="rect" id="node10"  alt="" coords="83,99,211,130">
+<area shape="poly" id="edge14"  alt="" coords="320,199,268,188,218,170,192,157,170,141,173,136,195,152,220,166,270,182,321,194">
+<area shape="poly" id="edge17"  alt="" coords="469,220,497,238,503,250,498,263,481,275,454,284,388,296,387,291,453,279,478,270,494,260,497,250,493,242,466,225">
+<area shape="poly" id="edge9"  alt="" coords="247,132,213,143,193,157,162,200,147,228,142,243,146,250,166,253,179,254,188,259,213,280,243,292,241,297,210,285,185,264,177,259,166,258,142,254,137,244,142,226,158,197,189,153,211,139,245,127">
+<area shape="poly" id="edge10"  alt="" coords="308,98,333,60,348,43,352,47,337,63,313,101">
+<area shape="poly" id="edge12"  alt="" coords="543,102,418,44,420,39,546,98">
+<area shape="poly" id="edge4"  alt="" coords="727,130,724,158,715,195,698,232,686,249,671,263,650,275,621,284,547,296,464,302,388,303,388,298,464,296,546,290,619,279,648,270,668,259,682,246,693,230,710,193,718,158,722,129">
+<area shape="rect" id="node11"  alt="" coords="29,6,214,37">
+<area shape="poly" id="edge15"  alt="" coords="133,101,120,75,117,50,122,49,125,74,138,99">
+<area shape="poly" id="edge16"  alt="" coords="166,98,199,78,238,59,303,37,305,42,240,64,201,83,168,102"></map>
+			<br><a href="vlog-legend-classes.html"><span class="label label-primary">Legend</span></a><br>
+		</ul>
+
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#direct_associations_diagram">
+			<h4 class="panel-title">
+					Direct Associations Diagram <span class="glyphicon glyphicon-chevron-right"></span>
+			</h4>
+		</div>
+				<ul id="direct_associations_diagram" class="list-group panel-collapse collapse">
+			<img src="cdns_generic_indirect_register-GenericIndirectRegister_direct_associations.png" border="0" usemap="#_direct_associations_diagram" />
+			<map name="_direct_associations_diagram">
+<area shape="rect" id="node1" href="cdns_generic_indirect_register-GenericIndirectRegister.html"  alt="" coords="6,5,431,35"></map>
+			<br><a href="vlog-legend-classes.html"><span class="label label-primary">Legend</span></a><br>
+		</ul>
+
+	</div>
+
+<!-- ========= Generated From ======= -->
+		<hr>Generated from: <a href="../src/cdns_generic_indirect_register_pkg.sv">cdns_generic_indirect_register_pkg.sv</a>
+
+
+	</div>
+
+	<div class="footer">
+		<hr><p class="text-center">Generated by <b>uwes</b> on Mon Feb 13 14:31:18 IST 2017 using <a href="http://www.dvteclipse.com/" target="_new">Specador<sup>TM</sup></a> Version 16.1.29</p>
+    </div>
+
+	<script src="lib/jquery/js/jquery.js"></script>
+	<script src="lib/jquery/js/jquery.scrollUp.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<script src="lib/svg-pan-zoom/js/svg-pan-zoom.js"></script>
+	<script src="js/content.js"></script>
+	<script src="js/custom.js"></script>
+
+	</body>
+</html>
+
+

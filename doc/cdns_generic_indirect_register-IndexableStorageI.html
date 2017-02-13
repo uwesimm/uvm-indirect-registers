@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>flexible indirect registers
+API Specification</title>
+
+	<meta name="author" content="uwes">
+	<meta name="description" content="flexible indirect registers API Specification">
+	<meta name="generator" content="Specador. Copyright (C) 2005-2016 AMIQ EDA ">
+	<meta name="keywords" content="SystemVerilog, HTML Documentation, Specador, AMIQ EDA, flexible indirect registers API Specification">
+
+	<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="css/content.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container-fluid">
+<!-- ========= Title ======= -->
+<h2>class      		<a href="summary-cdns_generic_indirect_register.html">cdns_generic_indirect_register</a>
+:: IndexableStorageI
+</h2>
+
+
+<!-- ========= Top Buttons ======= -->
+		<br>
+		<div class="btn-group">
+				<button data-scroll=#parameters type="button" class="btn btn-default">Parameters <span class="badge">2</span></button>
+	
+	<button data-scroll=#typedefs type="button" class="btn btn-default">Typedefs <span class="badge">1</span></button>
+	
+	
+	
+	
+	<button data-scroll=#functions type="button" class="btn btn-default">Functions <span class="badge">3</span></button>
+	
+
+	<button data-scroll=#inheritance_diagram type="button" class="btn btn-default">Inheritance Diagram</button>
+	<button data-scroll=#collaboration_diagram type="button" class="btn btn-default">Collaboration Diagram</button>
+	<button data-scroll=#direct_associations_diagram type="button" class="btn btn-default">Direct Associations Diagram</button>
+
+		</div>
+		<br><br>
+
+<!-- ========= Inheritance Tree ======= -->
+
+<!-- ========= Description ======= -->
+	<pre class="comment">Storage API<br><br><b>Arguments:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>STORAGE</b> - type of a storage element<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>INDEX</b> - type of index<br></pre>
+
+<!-- ========= Parameters ======= -->
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#parameters">
+			<h4 class="panel-title">
+					Parameters <span class="glyphicon glyphicon-chevron-down"></span>
+			</h4>
+		</div>
+					<ul id="parameters" class="list-group panel-collapse collapse in">
+					<li class="list-group-item">
+						<a name="parameter_INDEX"></a>
+						<span class="signature">
+
+  type INDEX
+      = int
+
+
+						</span>
+
+					</li>
+					<li class="list-group-item">
+						<a name="parameter_STORAGE"></a>
+						<span class="signature">
+
+  type STORAGE
+      = int
+
+
+						</span>
+
+					</li>
+			</ul>
+
+	</div>
+
+<!-- ========= Constructor ======= -->
+
+<!-- ========= Typedefs ======= -->
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#typedefs">
+			<h4 class="panel-title">
+					Typedefs <span class="glyphicon glyphicon-chevron-down"></span>
+			</h4>
+		</div>
+					<ul id="typedefs" class="list-group panel-collapse collapse in">
+					<li class="list-group-item">
+						<a name="typedef_AtomicStorage"></a>
+						<span class="signature">
+
+	 <b>		AtomicStorage
+</b>
+
+		-> STORAGE
+	 []
+
+
+						</span>
+
+					</li>
+			</ul>
+
+	</div>
+
+<!-- ========= Structs ======= -->
+
+<!-- ========= Enums ======= -->
+
+<!-- ========= Variables ======= -->
+
+<!-- ========= Constraints ======= -->
+
+<!-- ========= Functions ======= -->
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#functions">
+			<h4 class="panel-title">
+					Functions <span class="glyphicon glyphicon-chevron-down"></span>
+			</h4>
+		</div>
+					<ul id="functions" class="list-group panel-collapse collapse in">
+					<li class="list-group-item">
+						<a name="function_getIndexForStorage"></a>
+						<span class="signature">
+
+	virtual  function 	INDEX
+
+	<b>		getIndexForStorage
+</b>(	<a href="cdns_generic_indirect_register-IndexableStorageI.html#typedef_AtomicStorage">AtomicStorage</a>
+storage)
+
+
+						</span>
+	<pre class="comment">Returns the index for the given set of storage elements<br><br><b>Returns:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;the index selecting the provided elements<br><br><b>Arguments:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>storage</b> - set of storage elements<br></pre>
+
+					</li>
+					<li class="list-group-item">
+						<a name="function_getSelectedAtomicEntities"></a>
+						<span class="signature">
+
+	virtual  function 	<a href="cdns_generic_indirect_register-IndexableStorageI.html#typedef_AtomicStorage">AtomicStorage</a>
+
+	<b>		getSelectedAtomicEntities
+</b>(			const ref 	INDEX
+idx)
+
+
+						</span>
+	<pre class="comment">Returns the actual storage element set for the given index<br><br><b>Returns:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;the set of selected storage elements<br><br><b>Arguments:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>idx</b> - the index<br></pre>
+
+					</li>
+					<li class="list-group-item">
+						<a name="function_set"></a>
+						<span class="signature">
+
+	virtual  function 	<a href="cdns_generic_indirect_register-IndexableStorageI.html">IndexableStorageI#(STORAGE, INDEX)</a>
+
+	<b>		set
+</b>(	<a href="cdns_generic_indirect_register-IndexableStorageI.html#typedef_AtomicStorage">AtomicStorage</a>
+r)
+
+
+						</span>
+	<pre class="comment">sets the actual reference to the actual storage elements for this indexable storage<br><br><b>Returns:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;the current IndexableStorage<br><br><b>Arguments:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>r</b> - the actual storage<br></pre>
+
+					</li>
+			</ul>
+
+	</div>
+
+<!-- ========= Tasks ======= -->
+
+<!-- ========= Diagrams ======= -->
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#inheritance_diagram">
+			<h4 class="panel-title">
+					Inheritance Diagram <span class="glyphicon glyphicon-chevron-right"></span>
+			</h4>
+		</div>
+				<ul id="inheritance_diagram" class="list-group panel-collapse collapse">
+			<img src="cdns_generic_indirect_register-IndexableStorageI_inheritance.png" border="0" usemap="#_inheritance_diagram" />
+			<map name="_inheritance_diagram">
+<area shape="rect" id="node1" href="cdns_generic_indirect_register-IndexableStorageI.html"  alt="" coords="5,5,373,35">
+<area shape="rect" id="node2" href="cdns_generic_indirect_register-MyIndexableStorageI.html"  alt="" coords="646,5,850,35">
+<area shape="poly" id="edge1"  alt="" coords="646,23,387,23,387,17,646,17"></map>
+			<br><a href="vlog-legend-classes.html"><span class="label label-primary">Legend</span></a><br>
+		</ul>
+
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#collaboration_diagram">
+			<h4 class="panel-title">
+					Collaboration Diagram <span class="glyphicon glyphicon-chevron-right"></span>
+			</h4>
+		</div>
+				<ul id="collaboration_diagram" class="list-group panel-collapse collapse">
+			<img src="cdns_generic_indirect_register-IndexableStorageI_collaboration.png" border="0" usemap="#_collaboration_diagram" />
+			<map name="_collaboration_diagram">
+<area shape="rect" id="node1" href="cdns_generic_indirect_register-IndexableStorageI.html"  alt="" coords="5,6,373,37"></map>
+			<br><a href="vlog-legend-classes.html"><span class="label label-primary">Legend</span></a><br>
+		</ul>
+
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-target="#direct_associations_diagram">
+			<h4 class="panel-title">
+					Direct Associations Diagram <span class="glyphicon glyphicon-chevron-right"></span>
+			</h4>
+		</div>
+				<ul id="direct_associations_diagram" class="list-group panel-collapse collapse">
+			<img src="cdns_generic_indirect_register-IndexableStorageI_direct_associations.png" border="0" usemap="#_direct_associations_diagram" />
+			<map name="_direct_associations_diagram">
+<area shape="rect" id="node1" href="cdns_generic_indirect_register-IndexableStorageI.html"  alt="" coords="5,5,373,35"></map>
+			<br><a href="vlog-legend-classes.html"><span class="label label-primary">Legend</span></a><br>
+		</ul>
+
+	</div>
+
+<!-- ========= Generated From ======= -->
+		<hr>Generated from: <a href="../src/cdns_generic_indirect_register_pkg.sv">cdns_generic_indirect_register_pkg.sv</a>
+
+
+	</div>
+
+	<div class="footer">
+		<hr><p class="text-center">Generated by <b>uwes</b> on Mon Feb 13 14:31:19 IST 2017 using <a href="http://www.dvteclipse.com/" target="_new">Specador<sup>TM</sup></a> Version 16.1.29</p>
+    </div>
+
+	<script src="lib/jquery/js/jquery.js"></script>
+	<script src="lib/jquery/js/jquery.scrollUp.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<script src="lib/svg-pan-zoom/js/svg-pan-zoom.js"></script>
+	<script src="js/content.js"></script>
+	<script src="js/custom.js"></script>
+
+	</body>
+</html>
+
+
